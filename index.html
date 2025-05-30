@@ -25,7 +25,7 @@
 
         /* Навигация */
         .navbar {
-            background-color: #2ac216;
+            background-color: #4012A6;
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
@@ -56,11 +56,11 @@
         }
 
         .nav-links a:hover {
-            color: #1b5e20;
+            color: #00C782;
         }
 
         .sign-up-btn {
-            background-color: #1b5e20;
+            background-color: #121C4D;
             color: #fff;
             padding: 10px 20px;
             border-radius: 20px;
@@ -71,7 +71,7 @@
         }
 
         .sign-up-btn:hover {
-            background-color: #2e7d32;
+            background-color: #00C782;
         }
 
         .dropdown {
@@ -93,7 +93,7 @@
         .dropdown-content a {
             display: block;
             padding: 12px 16px;
-            color: #333;
+            color: #121C4D;
             text-decoration: none;
             font-size: 14px;
         }
@@ -108,13 +108,13 @@
         }
 
         .dropdown:hover > a {
-            color: #1b5e20;
+            color: #00C782;
         }
 
-        /* Героическая секция */
+        /* Героическая секция с 3D фоном */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #4012A6 0%, #121C4D 100%);
             padding: 80px 40px;
             text-align: center;
             display: flex;
@@ -133,6 +133,54 @@
             height: 100%;
             background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
             opacity: 0.1;
+            z-index: 1;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            perspective: 1000px;
+        }
+
+        .hero-background .cube {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 199, 130, 0.3);
+            border: 2px solid #00C782;
+            animation: float 6s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .hero-background .cube:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .hero-background .cube:nth-child(2) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 1s;
+        }
+
+        .hero-background .cube:nth-child(3) {
+            top: 60%;
+            left: 40%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: translateY(-50px) rotateX(180deg) rotateY(180deg);
+            }
         }
 
         .hero-container {
@@ -141,6 +189,7 @@
             width: 100%;
             align-items: center;
             position: relative;
+            z-index: 2;
         }
 
         .hero-text {
@@ -154,16 +203,16 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 20px;
-            color: #28295e;
+            color: #ffffff;
         }
 
         .hero-text h1 span {
-            color: #28295e;
+            color: #00C782;
         }
 
         .hero-text p {
             font-size: 16px;
-            color: #555;
+            color: #f5f5f5;
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -174,8 +223,8 @@
         }
 
         .hero-buttons .btn-primary {
-            background-color: #2ac216;
-            color: #fff;
+            background-color: #00C782;
+            color: #121C4D;
             padding: 15px 30px;
             border-radius: 25px;
             font-size: 16px;
@@ -185,13 +234,14 @@
         }
 
         .hero-buttons .btn-primary:hover {
-            background-color: #2e7d32;
+            background-color: #121C4D;
+            color: #ffffff;
         }
 
         .hero-buttons .btn-secondary {
-            color: #333;
+            color: #ffffff;
             padding: 15px 30px;
-            border: 2px solid #28295e;
+            border: 2px solid #00C782;
             border-radius: 25px;
             font-size: 16px;
             font-weight: 500;
@@ -283,7 +333,7 @@
         .subjects h2 {
             font-size: 36px;
             margin-bottom: 40px;
-            color: #28295e;
+            color: #121C4D;
         }
 
         .subjects-container {
@@ -319,7 +369,7 @@
         .subject-card h3 {
             font-size: 20px;
             margin-bottom: 10px;
-            color: #28295e;
+            color: #121C4D;
         }
 
         .subject-card p {
@@ -331,19 +381,18 @@
         .subject-card .btn-primary {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #2ac216;
-            color: #28295e;
+            background-color: transparent;
+            color: #4012A6;
             border-radius: 20px;
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
-            transition: background-color 0.3s;
-            border: 1px solid #2ac216;
-            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid #00C782;
         }
 
         .subject-card .btn-primary:hover {
-            background-color: #2ac216;
+            background-color: #00C782;
             color: #ffffff;
         }
 
@@ -358,7 +407,7 @@
         .about h2 {
             font-size: 36px;
             margin-bottom: 40px;
-            color: #28295e;
+            color: #121C4D;
         }
 
         .about-container {
@@ -379,6 +428,7 @@
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
+            color: #4012A6;
         }
 
         .about-text p {
@@ -400,26 +450,106 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Анимации */
-        .animate {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
+        /* Секция "Наши учителя" */
+        .teachers {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: #f9f9f9;
+            scroll-margin-top: 80px;
         }
 
-        .animate:nth-child(1) {
-            animation-delay: 0.24s;
+        .teachers h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #121C4D;
         }
 
-        .animate:nth-child(2) {
-            animation-delay: 0.4s;
+        .teachers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .teacher-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .teacher-card img {
+            width: 150px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .teacher-card h3 {
+            font-size: 20px;
+            color: #121C4D;
+            margin-bottom: 10px;
+        }
+
+        .teacher-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Секция "Отзывы" */
+        .reviews {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: #fff;
+            scroll-margin-top: 80px;
+        }
+
+        .reviews h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #121C4D;
+        }
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .review-card h3 {
+            font-size: 16px;
+            color: #4012A6;
+            font-weight: 500;
         }
 
         /* Галерея */
@@ -433,7 +563,7 @@
         .gallery h2 {
             font-size: 36px;
             margin-bottom: 40px;
-            color: #28295e;
+            color: #121C4D;
         }
 
         .gallery-container {
@@ -453,84 +583,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Контакты */
-        .contacts {
-            padding: 60px 40px;
-            text-align: center;
-            background-color: #f9f9f9;
-            scroll-margin-top: 80px;
-        }
-
-        .contacts h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #1b5e20;
-        }
-
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #1b5e20;
-            outline: none;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form .btn-primary {
-            padding: 15px;
-            cursor: pointer;
-            background-color: #1b5e20;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form .btn-primary:hover {
-            background-color: #2e7d32;
-        }
-
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .social-links a {
-            color: #1b5e20;
-            font-size: 16px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #2e7d32;
-        }
-
         /* Футер */
         .footer {
-            background: linear-gradient(#2e7d32 0%, #2ac216 100%);
+            background: linear-gradient(#4012A6 0%, #00C782 100%);
             color: #fff;
             padding: 40px 40px;
             text-align: center;
@@ -569,7 +624,7 @@
         }
 
         .footer-links a:hover {
-            color: #e8f5e9;
+            color: #121C4D;
         }
 
         .footer-copy {
@@ -614,7 +669,7 @@
 
             .hero {
                 padding: 40px 20px;
-                min-height: 500px; /* Уменьшаем высоту для планшетов */
+                min-height: 500px;
             }
 
             .hero-container {
@@ -638,16 +693,16 @@
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
-                gap: 15px; /* Увеличиваем расстояние между кнопками */
+                gap: 15px;
             }
 
             .hero-buttons .btn-primary,
             .hero-buttons .btn-secondary {
                 width: 100%;
                 max-width: 300px;
-                min-width: 250px; /* Минимальная ширина кнопок */
+                min-width: 250px;
                 padding: 12px;
-                font-size: 15px; /* Чуть больше для читаемости */
+                font-size: 15px;
             }
 
             .hero-image img {
@@ -691,7 +746,7 @@
 
             .subject-card .btn-primary {
                 padding: 8px 16px;
-                font-size: 14px; /* Увеличиваем для читаемости */
+                font-size: 14px;
             }
 
             .gallery {
@@ -738,31 +793,30 @@
                 max-width: 300px;
             }
 
-            .contacts {
+            .teachers {
                 padding: 40px 20px;
             }
 
-            .contacts h2 {
+            .teachers h2 {
                 font-size: 28px;
             }
 
-            .contact-form {
-                max-width: 100%;
+            .teachers-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            .contact-form input,
-            .contact-form textarea {
-                padding: 12px;
-                font-size: 14px;
+            .reviews {
+                padding: 40px 20px;
             }
 
-            .contact-form .btn-primary {
-                padding: 12px;
-                font-size: 14px;
+            .reviews h2 {
+                font-size: 28px;
             }
 
-            .social-links a {
-                font-size: 14px;
+            .reviews-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .footer {
@@ -776,17 +830,6 @@
             .footer-info p,
             .footer-links a {
                 font-size: 13px;
-            }
-
-            .whatsapp-btn {
-                bottom: 15px;
-                right: 15px;
-                padding: 8px;
-            }
-
-            .whatsapp-btn img {
-                width: 36px;
-                height: 36px;
             }
         }
 
@@ -830,7 +873,7 @@
 
             .hero {
                 padding: 30px 15px;
-                min-height: 400px; /* Уменьшаем высоту для телефонов */
+                min-height: 400px;
             }
 
             .hero-text h1 {
@@ -845,8 +888,8 @@
             .hero-buttons .btn-primary,
             .hero-buttons .btn-secondary {
                 padding: 10px;
-                font-size: 14px; /* Увеличиваем для читаемости */
-                min-width: 220px; /* Минимальная ширина кнопок */
+                font-size: 14px;
+                min-width: 220px;
             }
 
             .hero-image img {
@@ -920,23 +963,20 @@
                 max-width: 250px;
             }
 
-            .contacts {
+            .teachers {
                 padding: 30px 15px;
             }
 
-            .contacts h2 {
+            .teachers h2 {
                 font-size: 24px;
             }
 
-            .contact-form input,
-            .contact-form textarea {
-                padding: 10px;
-                font-size: 13px;
+            .reviews {
+                padding: 30px 15px;
             }
 
-            .contact-form .btn-primary {
-                padding: 10px;
-                font-size: 13px;
+            .reviews h2 {
+                font-size: 24px;
             }
 
             .footer {
@@ -951,16 +991,6 @@
             .footer-info,
             .footer-links {
                 text-align: center;
-            }
-
-            .whatsapp-btn {
-                bottom: 10px;
-                right: 10px;
-            }
-
-            .whatsapp-btn img {
-                width: 32px;
-                height: 32px;
             }
         }
     </style>
@@ -983,12 +1013,18 @@
                 </div>
             </div>
             <a href="#gallery">Галерея</a>
-            <a href="#contacts">Контакты</a>
+            <a href="#teachers">Наши учителя</a>
+            <a href="#reviews">Отзывы</a>
         </div>
     </nav>
 
     <!-- Героическая секция -->
     <div class="hero">
+        <div class="hero-background">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
         <div class="hero-container">
             <div class="hero-text">
                 <h1 class="animate">НАУЧИМ ВАШЕГО <span>РЕБЁНКА</span></h1>
@@ -1071,6 +1107,47 @@
         </div>
     </section>
 
+    <!-- Секция "Наши учителя" -->
+    <section class="teachers" id="teachers">
+        <h2>Наши учителя</h2>
+        <div class="teachers-container">
+            <div class="teacher-card">
+                <img src="u1.jpeg" alt="Учитель 1">
+                <h3>Айгуль Жумабекова</h3>
+                <p>Преподаватель английского языка с 10-летним опытом.</p>
+            </div>
+            <div class="teacher-card">
+                <img src="u2.jpeg" alt="Учитель 2">
+                <h3>Нурлан Сериков</h3>
+                <p>Специалист по IT и программированию для детей.</p>
+            </div>
+            <div class="teacher-card">
+                <img src="u3.jpeg" alt="Учитель 3">
+                <h3>Елена Ким</h3>
+                <p>Преподаватель химии, увлеченная экспериментами.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Отзывы" -->
+    <section class="reviews" id="reviews">
+        <h2>Отзывы</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <p>"Мой ребенок стал увереннее говорить на английском всего за 3 месяца! Спасибо Edunation Academy!"</p>
+                <h3>Алия, мама Артема</h3>
+            </div>
+            <div class="review-card">
+                <p>"Уроки химии такие увлекательные, что дочка теперь мечтает стать ученым!"</p>
+                <h3>Гульнара, мама Амины</h3>
+            </div>
+            <div class="review-card">
+                <p>"IT-курсы помогли моему сыну создать свою первую игру. Это невероятно!"</p>
+                <h3>Дмитрий, папа Максима</h3>
+            </div>
+        </div>
+    </section>
+
     <!-- Галерея -->
     <section class="gallery" id="gallery">
         <h2>Галерея</h2>
@@ -1078,22 +1155,6 @@
             <img style="margin-left: 35px;" src="j1.jpeg" alt="Класс">
             <img style="height: 220px; margin-left: 35px;" src="j3.jpeg" alt="Учитель">
             <img style="margin-left: 35px;" src="j4.jpeg" alt="Мероприятие">
-        </div>
-    </section>
-
-    <!-- Контакты -->
-    <section class="contacts" id="contacts">
-        <h2>Контакты</h2>
-        <div class="contact-form">
-            <input type="text" placeholder="Ваше имя" required>
-            <input type="email" placeholder="Ваш email" required>
-            <textarea placeholder="Ваше сообщение" required></textarea>
-            <button class="btn-primary">Отправить</button>
-        </div>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Telegram</a>
         </div>
     </section>
 
@@ -1108,7 +1169,8 @@
             <div class="footer-links">
                 <a href="#about">О нас</a>
                 <a href="#gallery">Галерея</a>
-                <a href="#contacts">Контакты</a>
+                <a href="#teachers">Наши учителя</a>
+                <a href="#reviews">Отзывы</a>
             </div>
         </div>
         <p class="footer-copy">
@@ -1117,4 +1179,4 @@
         </p>
     </footer>
 </body>
-</html>ы
+</html>
